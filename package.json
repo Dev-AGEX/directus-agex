@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
+  "private": true,
   "scripts": {
+    "start": "npx directus start",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,48 +15,6 @@
     "@directus/sdk": "^19.0.1",
     "directus": "^11.4.1",
     "pg": "^8.13.2"
-  }
-}
-{
-  "name": "directus-rh",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "start": "npx directus start"
-  },
-  "dependencies": {
-    "directus": "latest",
-    "pg": "latest"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  }
-}
-{
-  "name": "directus-rh",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "start": "npx directus start"
-  },
-  "dependencies": {
-    "directus": "latest",
-    "pg": "latest"
-  },
-  "engines": {
-    "node": ">=18.0.0"
-  }
-}
-{
-  "name": "directus-rh",
-  "version": "1.0.0",
-  "private": true,
-  "scripts": {
-    "start": "npx directus start"
-  },
-  "dependencies": {
-    "directus": "latest",
-    "pg": "latest"
   },
   "engines": {
     "node": ">=18.0.0"
