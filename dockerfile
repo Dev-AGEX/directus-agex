@@ -1,32 +1,30 @@
-FROM directus/directus:latest
+FROM node:18
 
 WORKDIR /app
 
-# Copy package files first for better caching
+# Copy package files
 COPY package*.json ./
 
 # Install dependencies
 RUN npm install --omit=dev
 
-# Copy configuration files
-COPY .env ./
-COPY . ./
+# Copy project files
+COPY . .
+
+# Create uploads directory and set permissions
+RUN mkdir -p uploads && \
+    chown -R node:node /app && \
+    chmod -R 755 /app
 
 # Set environment variables
 ENV PORT=8055
 ENV NODE_ENV=production
 
-# Expose the port
+# Expose port
 EXPOSE ${PORT}
-
-# Set proper permissions
-USER root
-RUN mkdir -p /app/uploads && \
-    chmod -R 755 /app && \
-    chown -R node:node /app
 
 # Switch to non-root user
 USER node
 
-# Start Directus
-CMD ["node", "node_modules/directus/dist/start.js"]
+# Start command
+CMD ["npm", "start"]
