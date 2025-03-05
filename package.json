@@ -1,15 +1,16 @@
 {
   "name": "directus-rh",
-  "version": "1.0.1",
-  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node node_modules/directus/dist/start.js"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "dependencies": {
-    "directus": "^11.4.1",
-    "pg": "^8.13.2"
-  },
-  "engines": {
-    "node": ">=18.0.0"
+    "@directus/cli": "^9.14.3",
+    "pg": "^8.13.3"
   }
 }
