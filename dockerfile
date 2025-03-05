@@ -1,13 +1,10 @@
 FROM directus/directus:latest
 
-# Copiar arquivos de configuração
-COPY .env /directus/.env
-
-# Railway.app usa a variável PORT automaticamente
+# Railway automatically sets PORT environment variable
 ENV PORT=8055
 
-# Expor a porta dinamicamente
+# Expose the port that Railway will use
 EXPOSE ${PORT}
 
-# Comando para iniciar o Directus
+# Command to start Directus
 CMD ["npx", "directus", "start"]
