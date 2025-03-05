@@ -3,7 +3,7 @@
   "version": "1.0.1",
   "private": true,
   "scripts": {
-    "start": "npx directus start"
+    "start": "node node_modules/directus/dist/start.js"
   },
   "dependencies": {
     "directus": "^11.4.1",
