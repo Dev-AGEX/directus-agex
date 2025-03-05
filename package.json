@@ -1,16 +1,11 @@
 {
   "name": "directus-rh",
   "version": "1.0.1",
-  "description": "",
-  "main": "index.js",
+  "description": "Directus RH Project",
   "private": true,
   "scripts": {
-    "start": "npx directus start",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "npx directus start"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@directus/sdk": "^19.0.1",
     "directus": "^11.4.1",
