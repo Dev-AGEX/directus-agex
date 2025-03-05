@@ -1,15 +1,11 @@
 {
   "name": "directus-rh",
   "version": "1.0.1",
-  "description": "Directus RH Project",
   "private": true,
   "scripts": {
-    "start": "npx directus start",
-    "build": "npx directus bootstrap",
-    "dev": "npx directus start"
+    "start": "npx directus start"
   },
   "dependencies": {
-    "@directus/sdk": "^19.0.1",
     "directus": "^11.4.1",
     "pg": "^8.13.2"
   },
