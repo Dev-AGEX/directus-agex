@@ -27,7 +27,16 @@ RUN mkdir -p uploads && chmod 777 uploads
 # Create extensions directory
 RUN mkdir -p extensions && chmod 777 extensions
 
+# Create startup script
+RUN echo '#!/bin/sh\n\
+set -e\n\
+echo "Running database migrations..."\n\
+directus database migrate:latest || true\n\
+echo "Starting Directus..."\n\
+directus start\n\
+' > /directus/start.sh && chmod +x /directus/start.sh
+
 EXPOSE 8055
 
-# Start Directus with database initialization and migration
-CMD directus database install && directus database migrate:latest && directus start
+# Start Directus with custom script
+CMD ["/directus/start.sh"]
