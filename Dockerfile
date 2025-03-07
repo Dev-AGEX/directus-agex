@@ -1,4 +1,4 @@
-FROM node:22-bullseye-slim
+FROM node:18-bullseye-slim
 
 WORKDIR /directus
 
@@ -14,18 +14,19 @@ RUN apt-get update && apt-get install -y \
     libvips-dev \
     && rm -rf /var/lib/apt/lists/*
 
-# Copy package files
-COPY package.json package-lock.json ./
+# Install Directus globally
+RUN npm install -g directus@10.8.3
 
-# Install dependencies without rebuilding
-RUN npm ci
-
-# Copy project files
-COPY . .
+# Copy configuration files
+COPY .env ./
 
 # Create uploads directory
 RUN mkdir -p uploads && chmod 777 uploads
 
+# Create extensions directory
+RUN mkdir -p extensions && chmod 777 extensions
+
 EXPOSE 8055
 
-CMD ["npm", "start"]
+# Start Directus
+CMD ["directus", "start"]
