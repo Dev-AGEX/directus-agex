@@ -29,5 +29,5 @@ RUN mkdir -p extensions && chmod 777 extensions
 
 EXPOSE 8055
 
-# Start Directus with database migration
-CMD directus database migrate:latest && directus start
+# Start Directus with database initialization and migration
+CMD directus database install && directus database migrate:latest && directus start
