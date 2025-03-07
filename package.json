@@ -16,5 +16,9 @@
   },
   "engines": {
     "node": ">=22"
+  },
+  "resolutions": {
+    "rollup": "3.29.5",
+    "@rollup/plugin-node-resolve": "15.0.0"
   }
 }

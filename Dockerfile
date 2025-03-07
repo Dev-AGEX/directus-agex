@@ -14,7 +14,7 @@ RUN apk add --no-cache \
 
 # Copy package files
 COPY package.json package-lock.json ./
-
+ENV NODE_OPTIONS="--max-old-space-size=4096"
 # Install dependencies
 RUN npm ci
 
