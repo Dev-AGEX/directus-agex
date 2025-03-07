@@ -29,3 +29,4 @@ EXPOSE 8055
 
 # Start Directus
 CMD ["npm", "start"]
+
