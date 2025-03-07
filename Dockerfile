@@ -11,13 +11,14 @@ RUN apt-get update && apt-get install -y \
     libjpeg-dev \
     libgif-dev \
     librsvg2-dev \
+    libvips-dev \
     && rm -rf /var/lib/apt/lists/*
 
 # Copy package files
 COPY package.json package-lock.json ./
 
-# Install dependencies and rebuild
-RUN npm ci --build-from-source
+# Install dependencies without rebuilding
+RUN npm ci
 
 # Copy project files
 COPY . .
