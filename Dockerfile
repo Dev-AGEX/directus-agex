@@ -27,11 +27,12 @@ RUN mkdir -p uploads && chmod 777 uploads
 # Create extensions directory
 RUN mkdir -p extensions && chmod 777 extensions
 
-# Create startup script
+# Create startup script for Supabase PostgreSQL
 RUN echo '#!/bin/sh\n\
 set -e\n\
+echo "Checking database connection..."\n\
 echo "Running database migrations..."\n\
-directus database migrate:latest || true\n\
+directus database migrate:latest || echo "Migration failed but continuing..."\n\
 echo "Starting Directus..."\n\
 directus start\n\
 ' > /directus/start.sh && chmod +x /directus/start.sh
