@@ -19,6 +19,7 @@ RUN npm install -g directus@10.8.3
 
 # Copy configuration files
 COPY .env ./
+COPY package.json ./
 
 # Create uploads directory
 RUN mkdir -p uploads && chmod 777 uploads
